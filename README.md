@@ -19,7 +19,7 @@ P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u
 
 ## Na što mislimo kada kažemo Python
 
-Sama riječ Python označava skup pravila koji definiraju jedan specifični programski jezik. Ali kada od nekog čujete da programira u Pythonu ta osoba najčešće želi reći da programira u specifičnoj implementaciji tog skupa pravila koja se naziva CPython.
+Sama riječ Python označava skup pravila koji definiraju jedan specifični programski jezik. Ali kada od nekog čujete da programira u Pythonu ta osoba najčešće želi reći da programira u specifičnoj implementaciji tog skupa pravila koja se naziva CPython koju ćemo i mi koristiti na radionicama.
 
 **CPython** je implementacija našeg specifičnog skupa pravila pomoću C programskog jezika. To je ona verzija Pythona koju dobijete kada skinete Python sa [python.org](https://www.python.org/downloads/) stranice i uz to je i originalna verzija pythona koja prva implementira nove featureove. Na ovu verziju ćemo se i mi referirati kada budemo pričali o Pythonu. Pogodnost ove implementacije Pythona je ta što može pozivati kod pisan u C programskom jeziku što doprinosi brzini izvođenja programa.
 
