@@ -1,8 +1,9 @@
 # Autostopistički priručnik za Python
 
+
 ## Predgovor
 
-Ova skripta namjenjena je studentima i srednjoškolcima koji pohađaju PyOpen workshopove. Ovo nije knjiga koja se bavi svim značajkama ovog jezika već samo priručnik u učenju koji sadržava velik broj zanimljivosti i uputa za izradu projekata koji će se raditi na spomenutom workshopu.
+Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen workshopove. Ovo nije knjiga koja se bavi svim značajkama ovog jezika već samo priručnik u učenju koji sadržava velik broj zanimljivosti i uputa za izradu projekata koji će se raditi na spomenutom workshopu.
 
 Naravno ako ikoja izgubljena duša slučajno naiđe na ovu literaturu dozvoljeno joj je koristit ju u svrhu samostalne edukacije.
 
@@ -17,11 +18,23 @@ P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u
 2. [Is Python interpreted or compiled](https://nedbatchelder.com/blog/201803/is_python_interpreted_or_compiled_yes.html)
 
 
+## Komedija, zmija ili programski jezik
+
+Python, nama danas poznat kao *high level, open source* programski jezik, započeo je 1980-ih godina u Nizozemskoj.
+
+Tada mladi računalni znanstvenik pod imenom Guido van Rossum radio je na Državnom Istraživačkom Institutu za Matematiku i Računalne Znanosti u Amesterdamu. Bio je dio skupine znanstvenika koja se bavila razvijanjem Amoeba operacijskog sustava i na božić 1989 godine stvorio je Python sa svrhom da bude skriptni jezik koji bi olakšao sistem administraciju u Amoeba os-u.
+
+Ubrzo je Python prerastao iz malog skriptnog jezika u jedan od najpopularnijih programskih jezika na svijetu a u svrhu njegovog održavanja, promoviranja i razvoja stvoren je *Python Software Foundation*.
+
+S obzirom da je logo Pythona zmija većina ljudi misli da je ovaj programski jezik ime dobio po toj egzotičnoj, ubojitoj životinji, međutim Guido sam govori kako ga je imenovao prema BBC-evoj popularnoj humorističnoj eriji *Monty Python’s Flying Circus*
+
+
+
 ## Na što mislimo kada kažemo Python
 
 Sama riječ Python označava skup pravila koji definiraju jedan specifični programski jezik. Ali kada od nekog čujete da programira u Pythonu ta osoba najčešće želi reći da programira u specifičnoj implementaciji tog skupa pravila koja se naziva CPython koju ćemo i mi koristiti na radionicama.
 
-**CPython** je implementacija našeg specifičnog skupa pravila pomoću C programskog jezika. To je ona verzija Pythona koju dobijete kada skinete Python sa [python.org](https://www.python.org/downloads/) stranice i uz to je i originalna verzija pythona koja prva implementira nove featureove. Na ovu verziju ćemo se i mi referirati kada budemo pričali o Pythonu. Pogodnost ove implementacije Pythona je ta što može pozivati kod pisan u C programskom jeziku što doprinosi brzini izvođenja programa.
+**CPython** je implementacija našeg specifičnog skupa pravila pomoću C programskog jezika. To je ona verzija Pythona koju dobijete kada skinete Python sa [python.org](https://www.python.org/downloads/) stranice i uz to je i originalna verzija Pythona koja prva implementira nove featureove. Na ovu verziju ćemo se i mi referirati kada budemo pričali o Pythonu. Pogodnost ove implementacije Pythona je ta što može pozivati kod pisan u C programskom jeziku što doprinosi brzini izvođenja programa.
 
 Osim CPythona postoji još zanimljivih implementacija.
 
