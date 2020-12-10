@@ -7,8 +7,7 @@ Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen w
 
 Naravno ako ikoja izgubljena duša slučajno naiđe na ovu literaturu dozvoljeno joj je koristit ju u svrhu samostalne edukacije.
 
-P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u pisanju. Ako imate prijedlog kako unaprijediti ovu skriptu ili pak *krinđujete* na moje loše poznavanje strukture rečenice u Hrvatskom jeziku više ste nego dobrodošli napraviti pull request ili objaviti issue.
-
+P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u pisanju. Ako imate prijedlog kako unaprijediti ovu skriptu ili pak osjećate *susramlje* prema mom lošem poznavanjeu strukture rečenice u Hrvatskom jeziku više ste nego dobrodošli napraviti pull request ili objaviti issue.
 
 
 ## Literatura za ucenje
@@ -17,17 +16,18 @@ P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u
 
 2. [Is Python interpreted or compiled](https://nedbatchelder.com/blog/201803/is_python_interpreted_or_compiled_yes.html)
 
+3. [Diskusija na Quori o tome što je command prompt a što command line](https://www.quora.com/Is-command-line-and-command-prompt-the-same-tool)
+
 
 ## Komedija, zmija ili programski jezik
 
-Python, nama danas poznat kao *high level, open source* programski jezik, započeo je 1980-ih godina u Nizozemskoj.
+Python, nama danas poznat kao *high level, open source* programski jezik, stvoren je 1980-ih godina u Nizozemskoj.
 
 Tada mladi računalni znanstvenik pod imenom Guido van Rossum radio je na Državnom Istraživačkom Institutu za Matematiku i Računalne Znanosti u Amesterdamu. Bio je dio skupine znanstvenika koja se bavila razvijanjem Amoeba operacijskog sustava i na božić 1989 godine stvorio je Python sa svrhom da bude skriptni jezik koji bi olakšao sistem administraciju u Amoeba os-u.
 
 Ubrzo je Python prerastao iz malog skriptnog jezika u jedan od najpopularnijih programskih jezika na svijetu a u svrhu njegovog održavanja, promoviranja i razvoja stvoren je *Python Software Foundation*.
 
-S obzirom da je logo Pythona zmija većina ljudi misli da je ovaj programski jezik ime dobio po toj egzotičnoj, ubojitoj životinji, međutim Guido sam govori kako ga je imenovao prema BBC-evoj popularnoj humorističnoj eriji *Monty Python’s Flying Circus*
-
+S obzirom da je logo Pythona zmija većina ljudi misli da je ovaj programski jezik ime dobio po egzotičnoj, ubojitoj životinji, međutim Guido sam govori kako ga je imenovao prema BBC-evoj popularnoj humorističnoj eriji *Monty Python’s Flying Circus*
 
 
 ## Na što mislimo kada kažemo Python
@@ -57,7 +57,7 @@ add(1, 2)
 add("Mirko", "Slavko")
 ```
 
-U standardnom Pythonu primjer ovakvog koda je sasvim validan. Međutim RPython koji prevodi naš python kod u *strictly typed* programski jezik mora poznavati koji tip argumenata prima funkcija `def add(x, y)`. U prvom pozivu funkcije add `add(1, 2)` RPython compiler opaža da smo proslijedili dva *integera* pa funkciju add deklarira kao funkciju koja kao argumente prima dva *integera*.
+U standardnom Pythonu primjer ovakvog koda je sasvim validan. Međutim RPython koji prevodi naš python kod u *strictly typed* programski jezik mora poznavati koji tip argumenata prima funkcija `def add(x, y)`. U prvom pozivu funkcije add `add(1, 2)` RPython kompajler opaža da smo proslijedili dva *integera* pa funkciju add deklarira kao funkciju koja kao argumente prima dva *integera*.
 Prilikom drugog poziva funkcije `add("Mirko", "Slavko")` proslijedili smo kao argumente dva *stringa* što se protivi prethodnoj deklaraciji funkcije i zbog toga nam program javlja grešku.
 
 ```
@@ -89,6 +89,65 @@ Pa da ukratko objasnimo. Python 2.7 tj. posljednja je verzija Pythona 2 interpre
 Python 3 je trenutno najkorištenija verzija Python interpretera, najkorištenije njegovo izdanje je inačica Python 3.8.5, a nedavno smo dobili priliku koristiti i verziju 3.9 koja dodaje velik broj novih featureova u Python jezik.
 
 Bitno je zapamtiti da su sve verzije Python interpretera unutar neke serije (gdje bi serije bile Python 3 serija i Python 2 serija) kompatibilne sa prethodnim verzijama unutar te serije, ali ne i obrnuto.
+
+
+## Instalacija Pythona
+
+- Linux: `sudo <štagodveć> install python3`
+- MacOS: `sudo brew install python3`
+- Winodws: `pronađeš ga u Microsoft storeu`
+
+Najbitniji dva alata koja dobijete pokretanjem instalacije Pythona su:
+ 
+ - python interpreter
+ - python REPL
+ - pip
+ 
+S obzirom da su sve te tri stvari nešto što nazivamo *CLI aplikacije* bilo bi lijepo da malo popričamo tome što su: *konzola/terminal*, *shell* i *CLI*.
+
+
+### Komandna linija ili terminal ili konzola
+
+*CLI* je kratica za command line interface (ilitiga *sučelje naredbenog retka*), suprotno od *GUI* što je kratica za graphical user interface (ilitiga *grafičko korisničko sučelje*).
+
+Za razliku od GUI aplikacija, koje koristimo klikanjem na razne botune, CLI aplikacije koristimo pozivajući određene naredbe u terminalu.
+
+Terminal je korisničko sučelje kojeg koristimo pomoću tekstualnih komandi umjesto botuna. Takav pristup korištenju softwarea omogućava nam jednostavnu automatizaciju dosadnih i svakodnevnih operacija. Korištenje tekstualnih komandi najčešće je brže i fleksibilnije od korištenja grafičkog sučelja.
+Jedan primjer automatizacije dosadne operacije bio bi kompajliranje i pokretanje c programa zajedno sa njegovim bibliotekama:
+
+```bash
+gcc -Wall -g -c tree.c
+gcc -g main.c tree.o
+
+```
+
+ili gledanje Star Warsa... točnije ASCII Star Warsa napravljenog od 50275 linija dugog .txt filea:
+```bash
+telnet towel.blinkenlights.nl
+```
+
+Možemo reći da se terminal sastoji od dva dijela: *command prompta* i *shell jezika*.
+
+Kada pokrenemo terminal prva stvar koja nas doečeka je command prompt.
+
+![](images/prompt.jpeg)
+
+To je linija koja od nas traži komandu te nakon što je upišemo i udremo enter, prompt je prosljeđuje shellu. Osim toga prompt nam prikazuje i neke korisne podatke poput: 
+
+- trenutnog aktivnog korisnika (*jbarti*) 
+- ime uređaja (*jbarti-Lenovo-Y520-15IKBN*)
+- direktorij u kojem se nalazimo (*~/Documents/Projects*). Slika iznad prikauje nam default prompt bash shella.
+- oznak da možemo nastaviti unositi podatke (*$*)
+
+Prompt uvijek komande koje unosimo šalje na izvršavanje unutar određenog direktorija. Program koji je zadužen za izvršavanje komandi je interpreter *shell jezika*.
+
+Jezik pomoću kojeg komuniciramo s našim terminalom, a preko njega s operativnim sustavom zovemo *shell*. Vjerojatno ste se već i susreli s nekim od njih. Na Windowsima imamo: cmd.exe i PowerShell, na UNIX based sustavima imamo: bash, fish, zsh... Jedan od prvih i najpoznatijih shell jezika kojeg su možda i neki učili u osnovnim školama dok je informatika još bila izborni predmet bio je QBasic.
+
+Shell jezici imaju jako oskudan broj predefiniranih operacija koje mogu izvršavat, najčešće su to samo matematičke operacije, petlje, granana i osnovne operacije za baratanje sa direktorijima što zvuči uredu ali kako onda hakeri u filmovima mogu hakovati hakujući samo u terminalu ?
+
+Odgovor na to su *CLI aplikacije*
+
+
 
 
 
