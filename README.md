@@ -3,20 +3,22 @@
 
 ## Predgovor
 
-Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen workshopove. Ovo nije knjiga koja se bavi svim značajkama ovog jezika već samo priručnik u učenju koji sadržava velik broj zanimljivosti i uputa za izradu projekata koji će se raditi na spomenutom workshopu.
+Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen workshopove. Ovo nije knjiga koja se bavi svim značajkama ovog jezika već samo priručnik u učenju koji sadrži velik broj zanimljivosti i uputa za izradu projekata koji će se raditi na spomenutom workshopu.
 
 Naravno ako ikoja izgubljena duša slučajno naiđe na ovu literaturu dozvoljeno joj je koristit ju u svrhu samostalne edukacije.
 
 P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u pisanju. Ako imate prijedlog kako unaprijediti ovu skriptu ili pak osjećate *susramlje* prema mom lošem poznavanjeu strukture rečenice u Hrvatskom jeziku više ste nego dobrodošli napraviti pull request ili objaviti issue.
 
 
-## Literatura za ucenje
+## Referencirana literatura 
 
 1. [The Hitchiker's Guide to Python.pdf](http://index-of.es/Varios-2/The%20Hitchiker%27s%20Guide%20to%20Python.pdf)
 
 2. [Is Python interpreted or compiled](https://nedbatchelder.com/blog/201803/is_python_interpreted_or_compiled_yes.html)
 
 3. [Diskusija na Quori o tome što je command prompt a što command line](https://www.quora.com/Is-command-line-and-command-prompt-the-same-tool)
+
+4. [What is a REPL](https://codewith.mu/en/tutorials/1.0/repl)
 
 
 ## Komedija, zmija ili programski jezik
@@ -95,7 +97,7 @@ Bitno je zapamtiti da su sve verzije Python interpretera unutar neke serije (gdj
 
 - Linux: `sudo <štagodveć> install python3`
 - MacOS: `sudo brew install python3`
-- Winodws: `pronađeš ga u Microsoft storeu`
+- Winodws: `pronađeš ga u Microsoft storeu...3`
 
 Najbitniji dva alata koja dobijete pokretanjem instalacije Pythona su:
  
@@ -106,7 +108,7 @@ Najbitniji dva alata koja dobijete pokretanjem instalacije Pythona su:
 S obzirom da su sve te tri stvari nešto što nazivamo *CLI aplikacije* bilo bi lijepo da malo popričamo tome što su: *konzola/terminal*, *shell* i *CLI*.
 
 
-### Komandna linija ili terminal ili konzola
+## Komandna linija ili terminal ili konzola
 
 *CLI* je kratica za command line interface (ilitiga *sučelje naredbenog retka*), suprotno od *GUI* što je kratica za graphical user interface (ilitiga *grafičko korisničko sučelje*).
 
@@ -119,7 +121,11 @@ Jedan primjer automatizacije dosadne operacije bio bi kompajliranje i pokretanje
 gcc -Wall -g -c tree.c
 gcc -g main.c tree.o
 
+# Fun fact, gcc ili "gnu c compiler" pisan je u c programskom jeziku i svaka iduća 
+# verzija kompajlira se pomoću prethodne verzije.
 ```
+
+
 
 ili gledanje Star Warsa... točnije ASCII Star Warsa napravljenog od 50275 linija dugog .txt filea:
 ```bash
@@ -130,29 +136,92 @@ Možemo reći da se terminal sastoji od dva dijela: *command prompta* i *shell j
 
 Kada pokrenemo terminal prva stvar koja nas doečeka je command prompt.
 
-![](images/prompt.jpeg)
+![prompt](images/prompt.jpeg)
 
 To je linija koja od nas traži komandu te nakon što je upišemo i udremo enter, prompt je prosljeđuje shellu. Osim toga prompt nam prikazuje i neke korisne podatke poput: 
 
 - trenutnog aktivnog korisnika (*jbarti*) 
 - ime uređaja (*jbarti-Lenovo-Y520-15IKBN*)
 - direktorij u kojem se nalazimo (*~/Documents/Projects*). Slika iznad prikauje nam default prompt bash shella.
-- oznak da možemo nastaviti unositi podatke (*$*)
+- oznaku da možemo nastaviti unositi podatke (*$*)
 
-Prompt uvijek komande koje unosimo šalje na izvršavanje unutar određenog direktorija. Program koji je zadužen za izvršavanje komandi je interpreter *shell jezika*.
+Komande koje unosimo u prompt izvršavaju se unutar određenog direktorija. Program koji je zadužen za izvršavanje komandi je interpreter *shell jezika*.
 
 Jezik pomoću kojeg komuniciramo s našim terminalom, a preko njega s operativnim sustavom zovemo *shell*. Vjerojatno ste se već i susreli s nekim od njih. Na Windowsima imamo: cmd.exe i PowerShell, na UNIX based sustavima imamo: bash, fish, zsh... Jedan od prvih i najpoznatijih shell jezika kojeg su možda i neki učili u osnovnim školama dok je informatika još bila izborni predmet bio je QBasic.
 
-Shell jezici imaju jako oskudan broj predefiniranih operacija koje mogu izvršavat, najčešće su to samo matematičke operacije, petlje, granana i osnovne operacije za baratanje sa direktorijima što zvuči uredu ali kako onda hakeri u filmovima mogu hakovati hakujući samo u terminalu ?
+Shell jezici imaju jako oskudan broj predefiniranih operacija koje mogu izvršavati, najčešće su to samo matematičke operacije, petlje, grananja i komande za baratanje sa direktorijima, što zvuči okej, ali kako onda hakeri u filmovima mogu hakovati hakujući samo u terminalu ?
 
-Odgovor na to su *CLI aplikacije*
+Odgovor na to su *CLI aplikacije*. Osim što unutar shella možemo koristiti te *built in* komande, možemo sami napisati (ili češće downloadati) neku drugu komandu. Ta komanda nije ništa drugo nego program pisan u nekom interpretiranom jeziku ili binarni kod dobiven iz nekog kompajliranog jezika, koji prilikom izvršavanja može primati tekstualne argumente.
+
+Nekakav nepisani dogovor je da postoje dvije vrste tekstualnih argumenata koje prosljeđujemo CLI aplikaciji, a to bi bile:
+
+- opcije izvršavanja
+- podatci nad kojima se izvršava aplikacija
+
+Primjer takve komande bio bi:
+```bash
+python -i test.py
+```
+
+Gdje `-i` opcija koja oznaćava pokretanje interpretera u interaktivnom modeu, a `test.py` je file kojeg želimo pokrenuti, tj podatci nad kojima se pokreće aplikacija.
 
 
+Ponekad CLI aplikacije mogu imati i podkomande, jedan takav primjer bio bi:
+```bash
+pip install ime_nekog_paketa
+```
+
+Gdje je `install` podkomanda komande `pip`.
+
+Postoje dvije opcije koje bi svaka *CLI aplikacija* trebala imat, a to su `-v` koji nam pokazuje verziju aplikacije i `-h` koji pokazuje upute korištenja.
 
 
+## Python alati
+
+Vratimo se nazad na alate koje smo dobili instalacijom pythona.
+
+### Python interpreter
+Python interpreter je program kojem proslijedimo python file, on ga zatim kompajlira ui bytecode i taj bytecode se izvršava pomoću interpretera. Taj međukorak kompajliranja pythona u CPython implementaciji koju koristimo omogućava nam prepoznavanje grešaka u kodu prije izvršavanja samog koda. Ako među čitateljima postoji vanila JavaScript developer znati će cijeniti ovu činjenicu.
+
+Python interpreter pozivamo shell komandom:
+```bash
+python neki_file.py 
+```
+
+### Python REPL
+Vjerovali ili ne REPL nije riječ engleskog vokabulara već akronim nastao od riječi:
+ - **R**ead the user input (očitavanje Python komande)
+ - **E**valuate your code (dokućiti što označava kod)
+ - **P**rint any results (ispiši rezultat komande)
+ - **L**oop back to step one (vrati se na prvi korak)
+
+REPL možemo zamisliti i kao prompt koji kao shell jezik koristi Python. Pokrećemo ga shell komandom:
+```bash
+python
+```
+
+### pip
+
+Pip je također akronim koji znaći:
+ - **P**ackage **I**nstaller
+ - for ???
+ - **P**ython
+
+To je program koji nam omogućava downloadanje paketa sa *Python package indexa* (i ostalih indexova). Python package index je repozitorij skftwarea pisanog za Python programski jezik.
+
+U prijevodu to znaći da bilo koji developer može napisati Python skriptu i uploadati je kao paket na *PyPi* (Python package index), nakon toga bilo tko drugi može preuzeti taj kod i koristiti ga u svom projektu. Sav kod objavljen na PyPi je open source.
+
+Pip je razlog zbog kojeg je Python popularan. Danas postoji preko 250,000 projekata samo na PyPiu, kojeg slobodno možete koristiti i iz kojeg možete učiti pisati Python.
+
+Komanda za instalaciju paketa pomoću pipa glasi:
+```bash
+pip install ime_nekog_paketa
+```
 
 
 ## The zen of python
+
+Da bi naućili kako pisati Python prvo trebamo znati kako **kako** pisati dobar Python.
 
 ``` python
 >>> import this                                                                  
@@ -178,3 +247,9 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
+
+Ovih 20 aforizama odgovaraju nam na prethodno postavljeno pitanje. Prema njima se vodi razvoj svake iduće verzije Pythona. Kako točno implementiramo Pythonov zen u pojedinoj verziji programskog jezika govori nam [PEP8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
+
+
+
+# Vrijeme je da počnemo programirati
