@@ -1,6 +1,5 @@
 # Autostopistički priručnik za Python
 
-
 ## Predgovor
 
 Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen workshopove. Ovo nije knjiga koja se bavi svim značajkama ovog jezika već samo priručnik u učenju koji sadrži velik broj zanimljivosti i uputa za izradu projekata koji će se raditi na spomenutom workshopu.
@@ -151,7 +150,7 @@ Jezik pomoću kojeg komuniciramo s našim terminalom, a preko njega s operativni
 
 Shell jezici imaju jako oskudan broj predefiniranih operacija koje mogu izvršavati, najčešće su to samo matematičke operacije, petlje, grananja i komande za baratanje sa direktorijima, što zvuči okej, ali kako onda hakeri u filmovima mogu hakovati hakujući samo u terminalu ?
 
-Odgovor na to su *CLI aplikacije*. Osim što unutar shella možemo koristiti te *built in* komande, možemo sami napisati (ili češće downloadati) neku drugu komandu. Ta komanda nije ništa drugo nego program pisan u nekom interpretiranom jeziku ili binarni kod dobiven iz nekog kompajliranog jezika, koji prilikom izvršavanja može primati tekstualne argumente.
+Odgovor na to su *CLI aplikacije*. Osim što unutar shella možemo koristiti *built in* komande, možemo sami napisati (ili češće downloadati) neku drugu komandu. Ta komanda nije ništa drugo nego program pisan u nekom interpretiranom jeziku ili binarni kod dobiven iz nekog kompajliranog jezika, koji prilikom izvršavanja može primati tekstualne argumente.
 
 Nekakav nepisani dogovor je da postoje dvije vrste tekstualnih argumenata koje prosljeđujemo CLI aplikaciji, a to bi bile:
 
@@ -173,7 +172,7 @@ pip install ime_nekog_paketa
 
 Gdje je `install` podkomanda komande `pip`.
 
-Postoje dvije opcije koje bi svaka *CLI aplikacija* trebala imat, a to su `-v` koji nam pokazuje verziju aplikacije i `-h` koji pokazuje upute korištenja.
+Postoje dvije opcije koje bi svaka *CLI aplikacija* trebala imati, a to su `-v` koji pokazuje verziju aplikacije i `-h` koji pokazuje upute korištenja.
 
 
 ## Python alati
@@ -181,7 +180,7 @@ Postoje dvije opcije koje bi svaka *CLI aplikacija* trebala imat, a to su `-v` k
 Vratimo se nazad na alate koje smo dobili instalacijom pythona.
 
 ### Python interpreter
-Python interpreter je program kojem proslijedimo python file, on ga zatim kompajlira ui bytecode i taj bytecode se izvršava pomoću interpretera. Taj međukorak kompajliranja pythona u CPython implementaciji koju koristimo omogućava nam prepoznavanje grešaka u kodu prije izvršavanja samog koda. Ako među čitateljima postoji vanila JavaScript developer znati će cijeniti ovu činjenicu.
+Python interpreter je program kojem proslijedimo python file, on ga zatim kompajlira ui bytecode i taj bytecode se izvršava pomoću interpretera. Taj međukorak kompajliranja pythona u CPython implementaciji koju koristimo omogućava nam prepoznavanje grešaka u kodu prije izvršavanja samog koda. Ako među čitateljima postoji vanilla JavaScript developer znati će cijeniti ovu činjenicu.
 
 Python interpreter pozivamo shell komandom:
 ```bash
@@ -249,7 +248,6 @@ Namespaces are one honking great idea -- let's do more of those!
 ```
 
 Ovih 20 aforizama odgovaraju nam na prethodno postavljeno pitanje. Prema njima se vodi razvoj svake iduće verzije Pythona. Kako točno implementiramo Pythonov zen u pojedinoj verziji programskog jezika govori nam [PEP8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
-
 
 
 # Vrijeme je da počnemo programirati
