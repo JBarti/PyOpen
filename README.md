@@ -19,6 +19,8 @@ P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u
 
 4. [What is a REPL](https://codewith.mu/en/tutorials/1.0/repl)
 
+5. [Python Crash Course](http://bedford-computing.co.uk/learning/wp-content/uploads/2015/10/No.Starch.Python.Oct_.2015.ISBN_.1593276036.pdf)
+
 
 ## Komedija, zmija ili programski jezik
 
