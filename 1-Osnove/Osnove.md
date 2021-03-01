@@ -4,7 +4,7 @@ U ovom poglavlju objasniti ćemo osnovne gradivne elemente koje nam Python pruž
 
 ## Sintaksa
 
-Pythonova sintaksa istovremeno je razlog zbog ćega ga ljudi koji ga vole, vole, a ljudi koji ga mrze, mrze.
+Pythonova sintaksa istovremeno je razlog zbog čega ga ljudi koji ga vole, vole, a ljudi koji ga mrze, mrze.
 
 Za većinu ljudi koji su tokom svog obrazovanja navikli pisati programske jezike čija je sintaksa inspirirana C programskim jezikom, Python će izgledati kao programski jezik iz najdubljih krugova pakla.
 
@@ -50,7 +50,7 @@ if 1 == 0:
 uradiNesto()
 ```
 
-Sada se postavlja pitanje, koristimo li tabove ili spaceove za indentaciju. Vi odlučite, ali što god odlučite, nemojte koristit i tabove i spaceove (primarno jer vam se program neće pokrenuti, a i zbog toga što bi mogli završiti pod giljotinom), ali na kraju dana što god odlućite da je bolje i urednije, koristite spaceove, jer Guido Van Rossum tako kaže, a Guido Van Rossum je vjerojatno mnogo pametniji od vas.
+Sada se postavlja pitanje, koristimo li tabove ili spaceove za indentaciju. Vi odlučite, ali što god odlučite, nemojte koristit i tabove i spaceove (primarno jer vam se program neće pokrenuti, a i zbog toga što bi mogli završiti pod giljotinom), ali na kraju dana što god odlučite da je bolje i urednije, koristite spaceove, jer Guido Van Rossum tako kaže, a Guido Van Rossum je vjerojatno mnogo pametniji od vas.
 
 [The Silicon Valley: Spaces vs Tabs](https://youtu.be/SsoOG6ZeyUI)
 
@@ -96,7 +96,7 @@ Varijable se koriste za pohranjivanje koje ćemo kasnije koristiti i kojima ćem
 
 Prema način tretiranja varijabli i podataka Python klasificiramo kao *dynamically typed* i *strong typed* programski jezik.
 
-Dinamička tipiziranost govori nam da u Pythonu tip podatka vežemo za neku vrijednost, a ne za samu varijablu. Zbog toga u pythonu deklaracija varijable na *"tradicionalan"* način nije potrebna, tj. pri stvaranju varijable nemoramo eksplicitno reči koji će biti njen tip. To nam omogućava i da unutar *runtimea* programa mijenjamo tip podatka koji je vezan za varijablu.
+Dinamička tipiziranost govori nam da u Pythonu tip podatka vežemo za neku vrijednost, a ne za samu varijablu. Zbog toga u pythonu deklaracija varijable na *"tradicionalan"* način nije potrebna, tj. pri stvaranju varijable ne moramo eksplicitno reći koji će biti njen tip. To nam omogućava i da unutar *runtimea* programa mijenjamo tip podatka koji je vezan za varijablu.
 
 Za razliku od C programskog jezika gdje ovakav kod rezultira kompajlerskom pogreškom.
 
@@ -105,14 +105,14 @@ int varijabla = 10;
 varijabla = "Tekst";
 ```
 
-U Pythou su takve stvari dozvoljene.
+U Pythonu su takve stvari dozvoljene.
 
 ```Python
 varijabla = 10
 varijabla = "Tekst"
 ```
 
-Međutim, to što su nam dozvoljene, ne znaći nužno da su dobra praksa. Nije poželjno drastično mijenjati tip varijable unutar rada programa. Možete se voditi pravilom da je to u redu dok god koristite tipove iz jedne familije podataka (npr. pridruživanje inta i floata istoj varijabli).
+Međutim, to što su nam dozvoljene, ne znači nužno da su dobra praksa. Nije poželjno drastično mijenjati tip varijable unutar rada programa. Možete se voditi pravilom da je to u redu dok god koristite tipove iz jedne familije podataka (npr. pridruživanje inta i floata istoj varijabli).
 
 To primarno nije dobra praksa zbog toga što narušava konzistentnost samog koda (a konzistencija je ključna stvar dobrog programa) već nam može prouzročiti nepredvidive greške u programu, što nas dovodi u drugu familiju programskih jezika u koju Python spada, *strongly typed* jezici. Strongly typed jezici nemaju super dobru definiciju, ali laički rečeno, to znaći da varijable ne mogu *"magično"* promjeniti svoj tip podatka. Vjerojatno će te lakše shvatiti o čemu pričamo na primjeru:
 
@@ -132,7 +132,7 @@ Dok python to prepoznaje kao grešku.
 
 Problem se javlja zbog toga što Python će nas upozoriti na ovu grešku samo ako program izvrši ovu liniju koda. Ako nismo konzstentni u tipovima podataka koje pridružujemo varijablama može nam se dogoditi da unutar koda imamo duboko zasijanu ilegalnu operaciju između dva nepodržana tipa podataka, koja će nakon 2 godine u produkciji i 10 000 updateova poslije prouzročiti budućem vama-programeru debugging glavobolju.
 
-Idući kod će interpreter pokrenuti bez problema zbog toga što nikada neće doći do 3. linije koda, ali svejedno ona predstavlja potencijalnu *program breaking* grešku posijanu u kodu koja samo čeka dan kada će ju netko trigerati.
+Idući kod će interpreter pokrenuti bez problema zbog toga što nikada neće doći do 3. linije koda, ali svejedno ona predstavlja potencijalnu *program breaking* grešku posijanu u kodu koja samo čeka dan kada će ju netko *triggerati*.
 
 ```Python
 x = 0
@@ -150,7 +150,7 @@ else:
 > -- <cite>Adriano Dijan</cite>
 
 
-Zanimljivo je pogledati način na koji Python implementira osnovne tipove podataka. Za to prvo moramo pogledati funkciju `type()` koja kao argument prima objekt i vraća klasu od koje je nastao taj objekt. Ako pokušamo toj funkciji proslijediti kao argument varijablu koja u sebi ima pohranjen broj dobijemo idući rezultat.
+Zanimljivo je pogledati način na koji Python implementira osnovne tipove podataka. Za to prvo moramo pogledati funkciju `type()` koja kao argument prima objekt i vraća klasu od koje je nastao taj objekt. Ako pokušamo toj funkciji proslijediti kao argument varijablu koja u sebi ima pohranjen broj, dobijemo idući rezultat.
 
 ```Python
 x = 10
@@ -175,11 +175,11 @@ Sada dolazimo do jako bitnog zaključka. Sve u Pythonu je objekt i svi objekti s
 
 Brojevi, numerički podatci su brojevi, što reći još.
 
-Dobra stvar za napomenuti bila bi da Python iz nekog razloga nema definiranu operaciju inkrementacije `var++`, umjesto toga morat će te kao kakvi prljavi, neoptimizirani špiljski čovjek koristiti izraz `var += 1`.
+Dobra stvar za napomenuti bila bi da Python iz nekog razloga nema definiranu operaciju inkrementa `var++`, umjesto toga morat će te kao kakvi prljavi, neoptimizirani špiljski čovjek koristiti izraz `var += 1`.
 
 Numerički podaci u Pythonu su zanimljivi zbog toga što je veličina broja kojeg možemo u pisati u varijablu ograničena samo radnom memorijom uređaja. 
 
-Cjelobrojne vrijenosti možemo zadati i pomoću prefiksa baze brojevnog sustava kojeg koristimo.
+Cjelobrojne vrijednosti možemo zadati i pomoću prefiksa baze brojevnog sustava kojeg koristimo.
 
 ```Python
 print(0o10)
@@ -238,7 +238,6 @@ Stringovi su nešto složeniji tip podataka od brojeva. Već smo zaključili da 
  - `string.index(substring)` -> vraća poziciju prve pojave traženog substringa unutar stringa, ako substring nije pronađen baca grešku
  - `string.format(arg1, arg2,...)` -> ubacuje argumente metode na predviđenja polja u stringu
  - `string.split(separator)` -> razdvoji string u listu prema određenom separatoru
-
 
 Dvije vrlo korisne ali nešto kompleksnije metode sa kojima se možda još niste susreli su `format()` i `split()`.
 Formatiranje se primarno koristi pri ubacivanju vrijednosti varijabli u stringove.
@@ -326,7 +325,7 @@ tapl[0] = "Ante"
 # TypeError: 'tuple' object does not support item assignment
 ```
 
-Jedini naćin da dodamo novi element u tuple je da stvorimo novi tuple sa elementima početnog tuplea i novim podatcima koje želimo ubaciti u njega. Zbog toga tupleovi ne podržavaju metodu `append()` ali podržavaju zbrajanje tupleova.
+Jedini način da dodamo novi element u tuple je da stvorimo novi tuple sa elementima početnog tuplea i novim podatcima koje želimo ubaciti u njega. Zbog toga tupleovi ne podržavaju metodu `append()` ali podržavaju zbrajanje tupleova.
 
 Metode definirane nad tupleovima su:
  - `tuple.count(value)` -> vraća broj ponavljanja vrijednosti value unutar tuplea
@@ -337,7 +336,7 @@ Metode definirane nad tupleovima su:
 
 Set predstavlja matematički skup podataka. Za razliku od ostalih iterabilnih vrsta podataka on ne podržava duplikate. Za bilo koja dva elementa za koja vrijedi operacija jednakosti `==`, set će automatski pohraniti samo jednu od njih.
 
-Definira se vitićastim zagradama umjesto uglatim. Dopušta nam indeksiranje elemenata, ali kao i kod tupleova, ne možemo mijenjati vrijednost na pojedinom indeksu.
+Definira se vitičastim zagradama umjesto uglatim. Dopušta nam indeksiranje elemenata, ali kao i kod tupleova, ne možemo mijenjati vrijednost na pojedinom indeksu.
 
 ```Python
 skup = {1, 2, 3, 4, 5, 5, 2, 1, 2}
@@ -374,9 +373,9 @@ Metode nad setovima bazirane su većinom na matematičkim operacijama nad skupov
 
 #### Dict
 
-Ako prevedemo ime ove strukture podataka (dictionary) na hrvatski, dobijemo riječ koja savršeno opisuje naćin na koji ona radi, rječnik. Za razliku od prethodnih složenih tipova podataka koje smo obradili, koji neku informaciju povezuju sa rednim brojem i omogućavaju nam pristup podatku pomoću tog rednog broja kojeg nazivamo indeks, dictovi vežu informaciju uz bilo kakav objekt kojeg je moguće hashirati (točnije mora biti immutable, zbog toga ne možemo koristiti listu kao key, ali tuple možemo) po sistemu key-value pair.
+Ako prevedemo ime ove strukture podataka (dictionary) na hrvatski, dobijemo riječ koja savršeno opisuje način na koji ona radi, rječnik. Za razliku od prethodnih složenih tipova podataka koje smo obradili, koji neku informaciju povezuju sa rednim brojem i omogućavaju nam pristup podatku pomoću tog rednog broja kojeg nazivamo indeks, dictovi vežu informaciju uz bilo kakav objekt kojeg je moguće hashirati (točnije mora biti immutable, zbog toga ne možemo koristiti listu kao key, ali tuple možemo) po sistemu key-value pair.
 
-Definiraju se korištenjem vitićastih zagrada. Sintaksa je vrlo slična JSON formatu. Podatke možemo dohvatiti indeksiranjem traženog ključa.
+Definiraju se korištenjem vitičastih zagrada. Sintaksa je vrlo slična JSON formatu. Podatke možemo dohvatiti indeksiranjem traženog ključa.
 
 ```Python
 rjecnik = {
@@ -397,7 +396,7 @@ Metode definirane nad dictovima su:
  - `dict.items()` -> vraća objekt tipa dict_items što je iterabilni tip koji sadrži tupleove gdje je prvi element u tupleu pojedini key, a drugi element value vezan uz taj key
  - `dict.keys()` -> vraća objekt tipa dict_keys što je iterabilni tip koji sadrži sve keyove dicta
  - `dict.pop(key)` -> izbacuje vrijednost pod ključem key 
- - `dict.popitem()` -> izbacuje zadnji ubaćeni key-value par
+ - `dict.popitem()` -> izbacuje zadnji ubačeni key-value par
  - `dict.setdefault(key, value)` -> vraća vrijednost vezanu uz ključ key, ako ključ ne postoji dodaje ga i uz njege veže vrijednost valu 
  - `dict.update(dict2)` -> updatea dict pomoću drugog dicta
  - `dict.values()` -> vraća objekt tipa dict_values što je iterabilni tip koji sadrži sve valuove dicta
@@ -460,9 +459,9 @@ Neke metode koje možemo primijeniti nad iterabilnim elementima su:
  - `filter(callback, iterable)` -> pokreće funkciju callback nad svakim elementom iterabila i vraća nam iterabil koji se sastoji od svih elemenata početnog iterabila za koje callback funkcija vraća vrijednost `True`
  - `len(iterable)` -> vraća duljinu iterabila
  - `sorted(iterable, key)` -> Sortira iterabil uzlazno ili prema proizvoljnom kriteriju opisanom funkcijom key ako je definirana
- 
 
-Postoji i jedan kul patern koji se zove raspakiravanje iterabila (unpacking) koji je poprilično self explanatory:
+
+Postoji i jedan kul pattern koji se zove raspakiravanje iterabila (unpacking) koji je poprilično self explanatory:
 
 ```Python
 lista = ["Mate", "Mišo", "Kovač"]
@@ -473,7 +472,7 @@ print(ime2) # "Mišo"
 print(prezime) # "Kovač"
 ```
 
-S obzirom da su iterabilni tipovi svi međusobno jako slični možemo vrlo lako vršiti pretvorbu među njima.
+S obzirom da su iterabilni tipovi svi međusobno jako slični, možemo vrlo lako vršiti pretvorbu među njima.
 
 U pythonu se pretvorba iz jednog tipa podatka u drugi vrši prosljeđivanjem podatka kojeg želimo pretvorit konstruktoru klase podatka u koji ga želimo pretvorit. Komplicirana rečenica koju je lakše shvatiti na primjeru. Pokušajmo za "proizvoljan broj" izdvojiti sve duplikate znamenki koristeći samo različite iterabilne tipove.
 
@@ -528,7 +527,7 @@ print(x == y) # True
 print(x is y) # False
 ```
 
-Zbog ćega se ovo događa ? Pri kreiranju novog objekta python svakom od njih dodjeljuje zaseban id kojeg možemo očitati pomoću istoimene funkcije `id`. Svi promjenjivi (mutable) objekti dobivaju različit id bez obzira koja je vrijednost zapisna u njima, dok svi nepromjenjivi immutable objekti, dobivaju isti id ako su iste vrijednosti. Operator `is`, iako sličan operatoru ekvivalencije, za razliku od njega ne provjerava vrijednost zapisanu u varijabli, već ideve dvaju varijabli. Na primjeru uspoređivanja dvaju listi, s obzirom da su i lista x i lista y dva novostvorena objekta, oni imaju različite ideve, ali vrijednosti koje su zapisane u obje liste su jednake. Zbog toga će operator ekvivalencije `==` reći da su obje liste iste, dok će operator identiteta `is` reći da nisu.
+Zbog čega se ovo događa? Pri kreiranju novog objekta python svakom od njih dodjeljuje zaseban id kojeg možemo očitati pomoću istoimene funkcije `id`. Svi promjenjivi (mutable) objekti dobivaju različit id bez obzira koja je vrijednost zapisna u njima, dok svi nepromjenjivi immutable objekti, dobivaju isti id ako su iste vrijednosti. Operator `is`, iako sličan operatoru ekvivalencije, za razliku od njega ne provjerava vrijednost zapisanu u varijabli, već ideve dvaju varijabli. Na primjeru uspoređivanja dvaju listi, s obzirom da su i lista x i lista y dva novostvorena objekta, oni imaju različite ideve, ali vrijednosti koje su zapisane u obje liste su jednake. Zbog toga će operator ekvivalencije `==` reći da su obje liste iste, dok će operator identiteta `is` reći da nisu.
 
 Međutim, u slučaju kada listu y ne definiramo ponovno vrijedi:
 
@@ -539,7 +538,7 @@ print(x == y) # True
 print(x is y) # True
 ```
 
-To je zbog toga što pri stvaranju y varijable za nju ne stvaramo novu listu, već vežemo uz istu listu za koju je vezana varijabla x. Stoga ako promjenimo vrijednost u listi varijable y, promijenit će se vrijednost u listi varijable x, isto tako ako pogledamo ideve varijabli primjetit ćemo da su jednaki.
+To je zbog toga što pri stvaranju y varijable za nju ne stvaramo novu listu, već vežemo uz istu listu za koju je vezana varijabla x. Stoga ako promjenimo vrijednost u listi varijable y, promijenit će se vrijednost u listi varijable x, isto tako ako pogledamo ideve varijabli primijetit ćemo da su jednaki.
 
 ```Python
 x = [1, 2, 3, 4]
@@ -580,7 +579,7 @@ print(4 in x) # True
 
 ### Booleovi operatori
 
-Ako želimo povezati više relacija u jedan izraz to činimo pomoću operatora `and`, `or` i negaciju primjenjumemo izrazom `not`. Što je puno smislenije od `&&`, `||`, `!` operatora koje koriste ostali jezici.
+Ako želimo povezati više relacija u jedan izraz to činimo pomoću operatora `and`, `or` i negaciju primjenjujemo izrazom `not`. Što je puno smislenije od `&&`, `||`, `!` operatora koje koriste ostali jezici.
 
 To preimenovanje Booleovih operatora omogućava izgradnju čitljivijeg koda koji je bliži ljudskom stilu komunikacija. To možemo vidjeti na primjeru provjere nepripadnosti vrijednosti nekoj listi.
 

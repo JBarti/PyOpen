@@ -6,7 +6,7 @@ Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen w
 
 Naravno ako ikoja izgubljena duša slučajno naiđe na ovu literaturu dozvoljeno joj je koristit ju u svrhu samostalne edukacije.
 
-P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u pisanju. Ako imate prijedlog kako unaprijediti ovu skriptu ili pak osjećate *susramlje* prema mom lošem poznavanjeu strukture rečenice u Hrvatskom jeziku više ste nego dobrodošli napraviti pull request ili objaviti issue.
+P.S. Unaprijed se ispričavam na svim gramatičkim i mnogim drugim pogreškama u pisanju. Ako imate prijedlog kako unaprijediti ovu skriptu ili pak osjećate *susramlje* prema mom lošem poznavanju strukture rečenice u Hrvatskom jeziku više ste nego dobrodošli napraviti pull request ili objaviti issue.
 
 
 ## Referencirana literatura 
@@ -32,7 +32,7 @@ Tada mladi računalni znanstvenik pod imenom Guido van Rossum radio je na Držav
 
 Ubrzo je Python prerastao iz malog skriptnog jezika u jedan od najpopularnijih programskih jezika na svijetu a u svrhu njegovog održavanja, promoviranja i razvoja stvoren je *Python Software Foundation*.
 
-S obzirom da je logo Pythona zmija većina ljudi misli da je ovaj programski jezik ime dobio po egzotičnoj, ubojitoj životinji, međutim Guido sam govori kako ga je imenovao prema BBC-evoj popularnoj humorističnoj eriji *Monty Python’s Flying Circus*
+S obzirom da je logo Pythona zmija većina ljudi misli da je ovaj programski jezik ime dobio po egzotičnoj, ubojitoj životinji, međutim Guido sam govori kako ga je imenovao prema BBC-evoj popularnoj humorističnoj seriji *Monty Python’s Flying Circus*
 
 
 ## Na što mislimo kada kažemo Python
@@ -47,7 +47,7 @@ Osim CPythona postoji još zanimljivih implementacija.
 
 **Skulpt** je compiler koji prevodi Python u JavaScript, može se pokretati direktno iz web preglednika i koristi se u edukacijske svrhe.
 
-**RPython** je kompajer koji prevodi Python kod u C i nad programerom podstavlja ograničenja *strictly typed* programskih jezika. RPython ne nazivamo Python implementacijom zbog toga što sav Python kod ne možemo smatrati RPython kodom, ali sav kod koji možemo pokrenutir RPythonom, standardna implementacija PYthona može također pokrenuti. Zbog toga RPython najčešče nazivamo podskupom Python jezika.
+**RPython** je compiler koji prevodi Python kod u C i nad programerom podstavlja ograničenja *strictly typed* programskih jezika. RPython ne nazivamo Python implementacijom zbog toga što sav Python kod ne možemo smatrati RPython kodom, ali sav kod koji možemo pokrenutir RPythonom, standardna implementacija PYthona može također pokrenuti. Zbog toga RPython najčešče nazivamo podskupom Python jezika.
 
 Na ovom primjeru možemo uočiti razliku između standardnog Pythona i RPythona:
 
@@ -62,7 +62,7 @@ add(1, 2)
 add("Mirko", "Slavko")
 ```
 
-U standardnom Pythonu primjer ovakvog koda je sasvim validan. Međutim RPython koji prevodi naš python kod u *strictly typed* programski jezik mora poznavati koji tip argumenata prima funkcija `def add(x, y)`. U prvom pozivu funkcije add `add(1, 2)` RPython kompajler opaža da smo proslijedili dva *integera* pa funkciju add deklarira kao funkciju koja kao argumente prima dva *integera*.
+U standardnom Pythonu primjer ovakvog koda je sasvim validan. Međutim RPython koji prevodi naš Python kod u *strictly typed* programski jezik mora poznavati koji tip argumenata prima funkcija `def add(x, y)`. U prvom pozivu funkcije add `add(1, 2)` RPython kompajler opaža da smo proslijedili dva *integera* pa funkciju add deklarira kao funkciju koja kao argumente prima dva *integera*.
 Prilikom drugog poziva funkcije `add("Mirko", "Slavko")` proslijedili smo kao argumente dva *stringa* što se protivi prethodnoj deklaraciji funkcije i zbog toga nam program javlja grešku.
 
 ```
@@ -76,7 +76,7 @@ Prilikom drugog poziva funkcije `add("Mirko", "Slavko")` proslijedili smo kao ar
 
 ## Verzije Python interpretera
 
-Ako posjetite službenu [download stranicu pythona](https://www.python.org/downloads/) susrest će te se sa velikim izborom aktivnih verzija Python interpretera različitih verzija.
+Ako posjetite službenu [download stranicu pythona](https://www.python.org/downloads/) susrest ćete se sa velikim izborom aktivnih verzija Python interpretera različitih verzija.
 
 | Version       | Maintanance status |
 | ------------- | ------------------ |
@@ -87,11 +87,11 @@ Ako posjetite službenu [download stranicu pythona](https://www.python.org/downl
 | 3.5           | end-of-life        |
 | 2.7           | end-of-life        |
 
-S obzirom da online Python tutoriali i knjige često datiraju i do 10 godina unatrag te različite verzije nazivaju najboljim ili aktualnim, novopridošlim python developerima zna često biti težak ovaj izbor.
+S obzirom da online Python tutoriali i knjige često datiraju i do 10 godina unatrag te različite verzije nazivaju najboljim ili aktualnim, novopridošlim Python developerima ovaj izbor češto zna biti težak.
 
-Pa da ukratko objasnimo. Python 2.7 tj. posljednja je verzija Pythona 2 interpretera izašla 2010. godine. Python 2 dostigao je kraj svog životnog ciklusa. To bi značilo da developeri više ne rade na podršci za njega, ne izadaju se novi paketi kompatibilni snjim, ne prima bugfixove, a i sam po sebi je u usporedbi s novom Python 3 verzijom zastarjel.
+Pa da ukratko objasnimo. Python 2.7 tj. posljednja je verzija Pythona 2 interpretera izašla 2010. godine. Python 2 dostigao je kraj svog životnog ciklusa. To bi značilo da developeri više ne rade na podršci za njega, ne izdaju se novi paketi kompatibilni s njim, ne prima bugfixove, a i sam po sebi je u usporedbi s novom Python 3 verzijom zastario.
 
-Python 3 je trenutno najkorištenija verzija Python interpretera, najkorištenije njegovo izdanje je inačica Python 3.8.5, a nedavno smo dobili priliku koristiti i verziju 3.9 koja dodaje velik broj novih featureova u Python jezik.
+Python 3 je trenutno najkorištenija verzija Python interpretera, njegovo najkorištenije izdanje je inačica Python 3.8.5, a nedavno smo dobili priliku koristiti verziju 3.9 koja dodaje velik broj novih featureova u Python jezik.
 
 Bitno je zapamtiti da su sve verzije Python interpretera unutar neke serije (gdje bi serije bile Python 3 serija i Python 2 serija) kompatibilne sa prethodnim verzijama unutar te serije, ali ne i obrnuto.
 
@@ -103,11 +103,11 @@ Bitno je zapamtiti da su sve verzije Python interpretera unutar neke serije (gdj
 - Winodws: `pronađeš ga u Microsoft storeu...3`
 
 Najbitniji dva alata koja dobijete pokretanjem instalacije Pythona su:
- 
+
  - python interpreter
  - python REPL
  - pip
- 
+
 S obzirom da su sve te tri stvari nešto što nazivamo *CLI aplikacije* bilo bi lijepo da malo popričamo tome što su: *konzola/terminal*, *shell* i *CLI*.
 
 
@@ -117,7 +117,7 @@ S obzirom da su sve te tri stvari nešto što nazivamo *CLI aplikacije* bilo bi 
 
 Za razliku od GUI aplikacija, koje koristimo klikanjem na razne botune, CLI aplikacije koristimo pozivajući određene naredbe u terminalu.
 
-Terminal je korisničko sučelje kojeg koristimo pomoću tekstualnih komandi umjesto botuna. Takav pristup korištenju softwarea omogućava nam jednostavnu automatizaciju dosadnih i svakodnevnih operacija. Korištenje tekstualnih komandi najčešće je brže i fleksibilnije od korištenja grafičkog sučelja.
+Terminal je korisničko sučelje kojeg koristimo pomoću tekstualnih komandi umjesto botuna. Takav pristup korištenju softvera omogućava nam jednostavnu automatizaciju dosadnih i svakodnevnih operacija. Korištenje tekstualnih komandi najčešće je brže i fleksibilnije od korištenja grafičkog sučelja.
 Jedan primjer automatizacije dosadne operacije bio bi kompajliranje i pokretanje c programa zajedno sa njegovim bibliotekama:
 
 ```bash
@@ -137,11 +137,11 @@ telnet towel.blinkenlights.nl
 
 Možemo reći da se terminal sastoji od dva dijela: *command prompta* i *shell jezika*.
 
-Kada pokrenemo terminal prva stvar koja nas doečeka je command prompt.
+Kada pokrenemo terminal prva stvar koja nas dočeka je command prompt.
 
 ![prompt](images/prompt.jpeg)
 
-To je linija koja od nas traži komandu te nakon što je upišemo i udremo enter, prompt je prosljeđuje shellu. Osim toga prompt nam prikazuje i neke korisne podatke poput: 
+To je linija koja od nas traži komandu te nakon što je upišemo i udarimo enter, prompt je prosljeđuje shellu. Osim toga prompt nam prikazuje i neke korisne podatke poput: 
 
 - trenutnog aktivnog korisnika (*jbarti*) 
 - ime uređaja (*jbarti-Lenovo-Y520-15IKBN*)
@@ -152,7 +152,7 @@ Komande koje unosimo u prompt izvršavaju se unutar određenog direktorija. Prog
 
 Jezik pomoću kojeg komuniciramo s našim terminalom, a preko njega s operativnim sustavom zovemo *shell*. Vjerojatno ste se već i susreli s nekim od njih. Na Windowsima imamo: cmd.exe i PowerShell, na UNIX based sustavima imamo: bash, fish, zsh... Jedan od prvih i najpoznatijih shell jezika kojeg su možda i neki učili u osnovnim školama dok je informatika još bila izborni predmet bio je QBasic.
 
-Shell jezici imaju jako oskudan broj predefiniranih operacija koje mogu izvršavati, najčešće su to samo matematičke operacije, petlje, grananja i komande za baratanje sa direktorijima, što zvuči okej, ali kako onda hakeri u filmovima mogu hakovati hakujući samo u terminalu ?
+Shell jezici imaju jako oskudan broj predefiniranih operacija koje mogu izvršavati, najčešće su to samo matematičke operacije, petlje, grananja i komande za baratanje sa direktorijima, što zvuči okej, ali kako onda hakeri u filmovima mogu hakovati hakujući samo u terminalu?
 
 Odgovor na to su *CLI aplikacije*. Osim što unutar shella možemo koristiti *built in* komande, možemo sami napisati (ili češće downloadati) neku drugu komandu. Ta komanda nije ništa drugo nego program pisan u nekom interpretiranom jeziku ili binarni kod dobiven iz nekog kompajliranog jezika, koji prilikom izvršavanja može primati tekstualne argumente.
 
@@ -166,7 +166,7 @@ Primjer takve komande bio bi:
 python -i test.py
 ```
 
-Gdje `-i` opcija koja oznaćava pokretanje interpretera u interaktivnom modeu, a `test.py` je file kojeg želimo pokrenuti, tj podatci nad kojima se pokreće aplikacija.
+Gdje `-i` opcija koja označava pokretanje interpretera u interaktivnom modu, a `test.py` je file kojeg želimo pokrenuti, tj. podaci nad kojima se pokreće aplikacija.
 
 
 Ponekad CLI aplikacije mogu imati i podkomande, jedan takav primjer bio bi:
@@ -181,10 +181,10 @@ Postoje dvije opcije koje bi svaka *CLI aplikacija* trebala imati, a to su `-v` 
 
 ## Python alati
 
-Vratimo se nazad na alate koje smo dobili instalacijom pythona.
+Vratimo se nazad na alate koje smo dobili instalacijom Pythona.
 
 ### Python interpreter
-Python interpreter je program kojem proslijedimo python file, on ga zatim kompajlira ui bytecode i taj bytecode se izvršava pomoću interpretera. Taj međukorak kompajliranja pythona u CPython implementaciji koju koristimo omogućava nam prepoznavanje grešaka u kodu prije izvršavanja samog koda. Ako među čitateljima postoji vanilla JavaScript developer znati će cijeniti ovu činjenicu.
+Python interpreter je program kojem proslijedimo python file, on ga zatim kompajlira u bytecode i taj bytecode se izvršava pomoću interpretera. Taj međukorak kompajliranja pythona u CPython implementaciji koju koristimo omogućava nam prepoznavanje grešaka u kodu prije izvršavanja samog koda. Ako među čitateljima postoji vanilla JavaScript developer znat će cijeniti ovu činjenicu.
 
 Python interpreter pozivamo shell komandom:
 ```bash
@@ -210,7 +210,7 @@ Pip je također akronim koji znaći:
  - for ???
  - **P**ython
 
-To je program koji nam omogućava downloadanje paketa sa *Python package indexa* (i ostalih indexova). Python package index je repozitorij softwarea pisanog za Python programski jezik.
+To je program koji nam omogućava preuzimanje paketa sa *Python package indexa* (i ostalih indexova). Python package index je repozitorij softwarea pisanog za Python programski jezik.
 
 U prijevodu to znaći da bilo koji developer može napisati Python skriptu i uploadati je kao paket na *PyPi* (Python package index), nakon toga bilo tko drugi može preuzeti taj kod i koristiti ga u svom projektu. Sav kod objavljen na PyPi je open source.
 
@@ -224,7 +224,7 @@ pip install ime_nekog_paketa
 
 ## The zen of python
 
-Da bi naućili kako pisati Python prvo trebamo znati **kako** pisati dobar Python.
+Da bi naučili kako pisati Python prvo trebamo znati **kako** pisati dobar Python.
 
 ``` python
 >>> import this                                                                  
