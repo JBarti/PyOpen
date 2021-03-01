@@ -210,7 +210,7 @@ Pip je također akronim koji znaći:
  - for ???
  - **P**ython
 
-To je program koji nam omogućava downloadanje paketa sa *Python package indexa* (i ostalih indexova). Python package index je repozitorij skftwarea pisanog za Python programski jezik.
+To je program koji nam omogućava downloadanje paketa sa *Python package indexa* (i ostalih indexova). Python package index je repozitorij softwarea pisanog za Python programski jezik.
 
 U prijevodu to znaći da bilo koji developer može napisati Python skriptu i uploadati je kao paket na *PyPi* (Python package index), nakon toga bilo tko drugi može preuzeti taj kod i koristiti ga u svom projektu. Sav kod objavljen na PyPi je open source.
 
@@ -224,7 +224,7 @@ pip install ime_nekog_paketa
 
 ## The zen of python
 
-Da bi naućili kako pisati Python prvo trebamo znati kako **kako** pisati dobar Python.
+Da bi naućili kako pisati Python prvo trebamo znati **kako** pisati dobar Python.
 
 ``` python
 >>> import this                                                                  
@@ -255,3 +255,6 @@ Ovih 20 aforizama odgovaraju nam na prethodno postavljeno pitanje. Prema njima s
 
 
 # Vrijeme je da počnemo programirati
+
+[Pređite na poglavlje 1 Osnove](./1-Osnove/Osnove.md)
+

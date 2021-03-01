@@ -66,6 +66,25 @@ Ionako ih vjerojatno nećete koristiti, ali za početak komentara koristi se ozn
 # Ovo je komentar
 ```
 
+## Ulaz i izlaz
+
+Za ispisivanje podataka u standardni izlaz koristimo se funkcijom `print`. Ona može primiti neograničen broj argumenata, pa ako imamo više stvari koje želimo ispisati ne moramo raditi više poziva.
+
+```Python
+print("Odgovor je", 42)
+```
+
+Ako želimo primiti vrijednost sa standardnog ulaza koristimo funkciju `input`. Ona kao argument prima poruku koja će se ispisati prilikom unošenja podataka. Ova funkcija kao rezultat uvijek vraća string. Ako želimo da očitana vrijednost bude broj moramo je pretvoriti u njega.
+
+```Python
+odgovor = input("Koji je odgovor na pitanje:")
+
+print(type(odgovor)) # <class 'str'>
+odgovor = int(odgovor)
+```
+
+O pretvaranju tipova govoriti ćemo nešto više u idućem poglavlju.
+
 ## Varijable i tipovi podataka
 
 Varijable se koriste za pohranjivanje koje ćemo kasnije koristiti i kojima ćemo manipulirati u toku programa. Podaci koje spremamo u varijable imaju svoj tip. Osnovni tipovi podataka u Pythonu su:
@@ -352,6 +371,7 @@ Metode nad setovima bazirane su većinom na matematičkim operacijama nad skupov
  - `set.remove(value)` -> briše element određene vrijednosti value, i baca grešku ukoliko ta vrijednost ne postoji
  - `set.pop(position=-1)` -> izbacuje element sa pozicije position, ukoliko pozicija nije proslijeđene izbacuje zadnji element
 
+
 #### Dict
 
 Ako prevedemo ime ove strukture podataka (dictionary) na hrvatski, dobijemo riječ koja savršeno opisuje naćin na koji ona radi, rječnik. Za razliku od prethodnih složenih tipova podataka koje smo obradili, koji neku informaciju povezuju sa rednim brojem i omogućavaju nam pristup podatku pomoću tog rednog broja kojeg nazivamo indeks, dictovi vežu informaciju uz bilo kakav objekt kojeg je moguće hashirati (točnije mora biti immutable, zbog toga ne možemo koristiti listu kao key, ali tuple možemo) po sistemu key-value pair.
@@ -422,7 +442,7 @@ else:
 
 To nas vodi do zaključka da booleovi u Pythonu nisu ništa drugo nego undercover intovi.
 
-![piderman meme](./images/piderman-meme.jpg)
+![piderman meme](../images/piderman-meme.jpg)
 
 
 #### Tips and tricks (stvari koje bi trebalo reći a neznan gdje ih svrstati)
@@ -478,7 +498,98 @@ novi_broj = int(string_novog_broja)
 # Ako budete nemojte nikom govoriti da sam vas ja to naučio
 ```
 
+
 ## Grananja
 
-Grananja u Pythonu započinjemo ključnom riječi `if`, nakon toga.
+Grananja nam služe da prema informaciji o trenutnom stanj programa donesemo odluku o tome koji je idući korak u njegovom radu. U Pythonu, kao i u većini (ako ne i svim) drugih programskih jezika, grananje započinjemo riječju `if`. Nakon toga pišemo željeni uvjet, a potom dvotočkom otvaramo blok koda i pišemo što će se dogoditi u datom slućaju. Poduvjete označavamo sa `elif` i krajnji slučaj sa `else`. 
 
+Uvjet u pythonu može biti bilo kakva vrijednost (zbog toga što vrijednosti mogu biti truthy i falsey) ili može biti zapisan izrazom koji vraća `True` ili `False`.
+
+```Python
+x = 20
+y = 30
+
+if x > y:
+	print("x je veći od y")
+elif x < y:
+	print("x je manji od y")
+else:
+	print("x i y su jednaki")
+```
+
+### Operatori jednakosti
+
+Osim provjeravanja jednakosti pomoću operatora ekvivalencije `==` postoji još jedan sličan operator za provjeravanje jednakosti pomoću identiteta, `is`. Uzmimo za primjer uspoređivanje dva stringa pomoću ovih dvaju naizgled sličnih operatora.
+
+```Python
+x = [1, 2, 3, 4]
+y = [1, 2, 3, 4]
+print(x == y) # True
+print(x is y) # False
+```
+
+Zbog ćega se ovo događa ? Pri kreiranju novog objekta python svakom od njih dodjeljuje zaseban id kojeg možemo očitati pomoću istoimene funkcije `id`. Svi promjenjivi (mutable) objekti dobivaju različit id bez obzira koja je vrijednost zapisna u njima, dok svi nepromjenjivi immutable objekti, dobivaju isti id ako su iste vrijednosti. Operator `is`, iako sličan operatoru ekvivalencije, za razliku od njega ne provjerava vrijednost zapisanu u varijabli, već ideve dvaju varijabli. Na primjeru uspoređivanja dvaju listi, s obzirom da su i lista x i lista y dva novostvorena objekta, oni imaju različite ideve, ali vrijednosti koje su zapisane u obje liste su jednake. Zbog toga će operator ekvivalencije `==` reći da su obje liste iste, dok će operator identiteta `is` reći da nisu.
+
+Međutim, u slučaju kada listu y ne definiramo ponovno vrijedi:
+
+```Python
+x = [1, 2, 3, 4]
+y = x
+print(x == y) # True
+print(x is y) # True
+```
+
+To je zbog toga što pri stvaranju y varijable za nju ne stvaramo novu listu, već vežemo uz istu listu za koju je vezana varijabla x. Stoga ako promjenimo vrijednost u listi varijable y, promijenit će se vrijednost u listi varijable x, isto tako ako pogledamo ideve varijabli primjetit ćemo da su jednaki.
+
+```Python
+x = [1, 2, 3, 4]
+y = x
+
+y[0] = 99
+print(x) # [99, 2, 3, 4]
+print(y) # [99, 2, 3, 4]
+```
+
+Za jednostavnije tipove podataka, poput brojeva, pridruživanje vrijednosti rezultira kopiranjem vrijednosti iz prve varijable i vezanjem druge varijable za kopiranu vrijednost.
+
+```Python
+x = 10
+y = x
+
+y += 1
+print(x, y) # 10, 11
+```
+
+Možete to zamisliti kao da gledate dva auta iste marke parkirana jednog do drugog. Operator ekvivalencije `==` razložio bi svaki od auta na komponente (motor, šasiju, boju, interijer) i provjerio da je svaka od tih komponenti jednaka, i vratio bi nam `True`, dok bi operator identiteta `is` samo vidio da su to dva auta neovisna jedna o drugom, koja imaju različite vlasnike i vratio bi `False`.
+
+### Matematički operatori
+
+Za relacije među brojevima koristimo se klasičnim matematičkim relacijama:
+ - `<=`
+ - `>=`
+ - `==`
+
+### Operator pripadnosti
+
+Osim već navedenih, i svima vjerojatno poznatih operatora usporedbe, u Pythonu postoji i operator pripadnosti iterabilnom objektu `in` koji vraća `True` odnosno `False` ovisno o tome nalazi li se vrijednost sa lijeve strane operatora u iterabilnom objektu sa desne strane operatora.
+
+```Python
+x = [1, 2, 3, 4, 5, 6]
+print(4 in x) # True
+```
+
+### Booleovi operatori
+
+Ako želimo povezati više relacija u jedan izraz to činimo pomoću operatora `and`, `or` i negaciju primjenjumemo izrazom `not`. Što je puno smislenije od `&&`, `||`, `!` operatora koje koriste ostali jezici.
+
+To preimenovanje Booleovih operatora omogućava izgradnju čitljivijeg koda koji je bliži ljudskom stilu komunikacija. To možemo vidjeti na primjeru provjere nepripadnosti vrijednosti nekoj listi.
+
+```Python
+niz_podataka = [1, 2, 3, 4, 5]
+neki_broj = 6
+
+if neki_broj not in niz_podataka:
+	print("Broj nije u nizu podataka")
+```
+
+Ovo je jedan od razloga zašto je Python postao popularan kao programski jezik. Nikome na svijetu tko zna osnove engleskog jezika nije potreban doktorat da razumje što ovaj kod radi.
