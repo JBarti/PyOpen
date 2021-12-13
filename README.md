@@ -1,5 +1,9 @@
 # Autostopistički priručnik za Python
 
+## Credits
+
+Hvala [Adrianu Dijanu](https://www.linkedin.com/in/adrianodijan/) na pomoći pri pisanju ove brošure i [Veselku Sprčiću](https://www.linkedin.com/in/veselko-sprcic-aa4105225/) na pomoći pri lektoriranju dokumenta.
+
 ## Predgovor
 
 Ova skripta namijenjena je studentima i srednjoškolcima koji pohađaju PyOpen workshopove. Ovo nije knjiga koja se bavi svim značajkama ovog jezika već samo priručnik u učenju koji sadrži velik broj zanimljivosti i uputa za izradu projekata koji će se raditi na spomenutom workshopu.
